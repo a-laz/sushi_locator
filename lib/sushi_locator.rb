@@ -1,4 +1,5 @@
-require "sushi_locator/version"
+require_relative "./sushi_locator/version"
+require_relative "./sushi_locator/cli.rb"
 
 module SushiLocator
   class Error < StandardError; end
