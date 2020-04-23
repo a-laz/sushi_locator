@@ -4,3 +4,4 @@ require_relative "../lib/sushi_locator.rb"
 
 puts "hello!"
 SushiLocator::CLI.new.call
+SushiLocator::Scraper.new.scrape_restaurants

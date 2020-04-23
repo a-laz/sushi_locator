@@ -3,12 +3,12 @@ class SushiLocator::Restaurant
 
   @@all = []
 
-  def initialize(name, number_of_reviews, status, price, url)
-    @name = name
-    @number_of_reviews = reviews
-    @staus = status
-    @price = price
-    @website = url
+  def initialize(attributes)
+    #@name = name
+    #@number_of_reviews = reviews
+    #@price = price
+  #  @website = url
+    attributes.each{|k,v| self.send(("#{k}="), v)}
     save
   end
 
