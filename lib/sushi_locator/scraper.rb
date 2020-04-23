@@ -4,12 +4,13 @@ class SushiLocator::Scraper
 
     restaurants = doc.css("div.restaurants-list-List__wrapper--3PzDL div._1llCuDZj")
     #name
-    #r.css("a._15_ydu6b")
-    #reviews
+    r.css("a._15_ydu6b").text
+    #review
+    r.css("span._10feygW").text
     #price
-    #address
-    #phone_number
+    r.css("span._1p0FLy4T").text
     #website
+    r.css("a._15_ydu6b").attribute("href")
   end
 
 end
