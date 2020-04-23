@@ -5,10 +5,10 @@ class SushiLocator::Scraper
     restaurants = doc.css("div.restaurants-list-List__wrapper--3PzDL div._1llCuDZj")
     #name
     r.css("a._15_ydu6b").text
-    #review
-    r.css("span._10feygW_").text
+    #number of reviews
+    r.css("div.MIajtJFg span.EHA742uW span._1p0FLy4t").text.split('reviews').first.strip
     #price
-    r.css("span._1p0FLy4T").text
+    r.css("div.MIajtJFg span.EHA742uW span._1p0FLy4t").text.split(/\w(?=[$])/).last
     #website
     r.css("a._15_ydu6b").attribute("href")
   end
