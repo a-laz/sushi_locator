@@ -5,7 +5,7 @@ class SushiLocator::Restaurant
 
   def initialize(name, number_of_reviews, price = nil, website)
     @name = name
-    @number_of_reviews = reviews
+    @number_of_reviews = number_of_reviews
     @price = price
     @website = website
     #attributes.each{|k,v| self.send(("#{k}="), v)}
