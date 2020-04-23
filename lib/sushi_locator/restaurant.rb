@@ -3,16 +3,17 @@ class SushiLocator::Restaurant
 
   @@all = []
 
-  def initialize(attributes)
-    #@name = name
-    #@number_of_reviews = reviews
-    #@price = price
-  #  @website = url
-    attributes.each{|k,v| self.send(("#{k}="), v)}
+  def initialize(name, number_of_reviews, price = nil, website)
+    @name = name
+    @number_of_reviews = reviews
+    @price = price
+    @website = website
+    #attributes.each{|k,v| self.send(("#{k}="), v)}
     save
   end
 
   def self.all
+    SushiLocator::Scraper.scrape_restaurants if @@all.empty?
     @@all
   end
 

@@ -5,8 +5,8 @@ class SushiLocator::CLI
     @input = ""
     until @input=='exit'
       get_restaurants
-      list_restaurants
-      get_user_restaurant
+      #list_restaurants
+      #get_user_restaurant
     end
   end
 

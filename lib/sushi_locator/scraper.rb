@@ -1,3 +1,4 @@
+
 class SushiLocator::Scraper
   def self.scrape_restaurants
     doc = Nokogiri::HTML(open("https://www.tripadvisor.com/Restaurants-g50226-c38-Columbus_Ohio.html"))
@@ -9,6 +10,7 @@ class SushiLocator::Scraper
       price = r.css("div.MIajtJFg span.EHA742uW span._1p0FLy4t").text.split(/\w(?=[$])/).last unless !price.include?('$')
       website = "https://tripadvisor.com" + r.css("a._15_ydu6b").attribute("href")
       SushiLocator::Restaurant.new(name, number_of_reviews, price, website)
+    end
     #name
     #r.css("a._15_ydu6b").text
     #number of reviews

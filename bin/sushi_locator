@@ -1,6 +1,5 @@
 #!/usr/bin/env ruby
 
-require_relative "../lib/sushi_locator.rb"
+require_relative "../lib/sushi_locator"
 
-puts "hello!"
 SushiLocator::CLI.new.call
