@@ -1,14 +1,13 @@
 class SushiLocator::Restaurant
-  attr_accessor :name, :reviews, :price, :address, :phone_number, :website
+  attr_accessor :name, :number_of_reviews, :price, :address, :phone_number, :website, :status, :cusine
 
   @@all = []
 
-  def initialize(name, reviews, price, address, phone_number, url)
+  def initialize(name, number_of_reviews, status, price, url)
     @name = name
-    @reviews = reviews
+    @number_of_reviews = reviews
+    @staus = status
     @price = price
-    @address = address
-    @phone_number = phone_number
     @website = url
     save
   end
