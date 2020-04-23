@@ -6,7 +6,7 @@ class SushiLocator::Scraper
     #name
     r.css("a._15_ydu6b").text
     #review
-    r.css("span._10feygW").text
+    r.css("span._10feygW_").text
     #price
     r.css("span._1p0FLy4T").text
     #website
