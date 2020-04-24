@@ -14,10 +14,11 @@ class SushiLocator::CLI
 
   def get_restaurants
     @restaurants = SushiLocator::Restaurant.all
+    #binding.pry
   end
 
   def list_restaurants
-    @restauarants.each.with_index(1) do |r,i|
+    @restaurants.each.with_index(1) do |r,i|
       puts "#{i}. #{r.name}"
     end
   end
@@ -30,7 +31,7 @@ class SushiLocator::CLI
   def show_attributes_for(chosen_restaurant)
     r = @restaurants[chosen_restaurant - 1]
     puts "Here is the info for #{r.name}: "
-    puts "     #{r.number_of_reviews}"
+    puts "     #{r.number_of_reviews} reviews"
     puts "     #{r.price}"
     puts "     #{r.website}"
   end
