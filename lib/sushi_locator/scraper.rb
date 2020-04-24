@@ -5,7 +5,7 @@ class SushiLocator::Scraper
 
     restaurants = doc.css("div.restaurants-list-List__wrapper--3PzDL div._1llCuDZj")
     restaurants.each do |r|
-      name = r.css("a._15_ydu6b").text #need to remove index_numbers from name
+      name = r.css("a._15_ydu6b").text.gsub(/\d+\./, "") #need to remove index_numbers from name
       number_of_reviews = r.css("div.MIajtJFg span.EHA742uW span._1p0FLy4t").text.split('reviews').first.strip
       price = r.css("div.MIajtJFg span.EHA742uW span._1p0FLy4t").text.split(/\w(?=[$])/).last
       website = "https://tripadvisor.com" + r.css("a._15_ydu6b").attribute("href")
