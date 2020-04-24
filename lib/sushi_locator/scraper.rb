@@ -22,4 +22,8 @@ class SushiLocator::Scraper
     #r.css("a._15_ydu6b").attribute("href")
   end
 
+  def self.scrape_info
+
+  end
+
 end

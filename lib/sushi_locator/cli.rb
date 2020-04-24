@@ -24,6 +24,7 @@ class SushiLocator::CLI
   end
 
   def get_user_restaurant
+    puts "Which Sushi Spot do you want info for?"
     chosen_restaurant = gets.strip.to_i
     show_attributes_for(chosen_restaurant)
   end
@@ -34,10 +35,6 @@ class SushiLocator::CLI
     puts "     #{r.number_of_reviews} reviews"
     puts "     #{r.price}"
     puts "     #{r.website}"
-  end
-
-  def get_user_input
-    @input = gets.strip
   end
 
 end

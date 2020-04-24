@@ -5,3 +5,4 @@ require_relative "../lib/sushi_locator"
 cli = SushiLocator::CLI.new
 cli.get_restaurants
 cli.list_restaurants
+cli.get_user_restaurant
