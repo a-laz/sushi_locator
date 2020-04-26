@@ -7,8 +7,7 @@ class SushiLocator::CLI
       get_restaurants
       list_restaurants
       get_user_restaurant
-      #next_option
-      #get_user_restaurant
+      next_option
     end
   end
 
@@ -37,5 +36,16 @@ class SushiLocator::CLI
     puts "     #{r.website}"
     puts "     #{r.status}"
   end
+
+  def next_option
+    puts "Do you want to see another Restaurant? yes/exit"
+    @input = gets.strip
+    case @input
+    when "yes"
+      list_restaurants
+      get_user_restaurant
+    end
+  end
+
 
 end

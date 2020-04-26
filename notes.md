@@ -23,3 +23,7 @@ methods
 #get_user_input
 #validate_input
 -Scraper
+
+Next Steps:
+-Use each url for each website to get in depth info on each sushi place
+  including: address, phone_number, and two reviews

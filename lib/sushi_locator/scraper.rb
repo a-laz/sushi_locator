@@ -34,8 +34,4 @@ class SushiLocator::Scraper
     #r.css("div.MIajtJFg span.EHA742uW span._1p0FLy4t").text.split(/([w](?=[A-Z]))|([n](?=[A-Z]))|([y](?=[A-Z]))/).first.split('reviews').last
   end
 
-  def self.scrape_info
-
-  end
-
 end

@@ -1,5 +1,5 @@
 class SushiLocator::Restaurant
-  attr_accessor :name, :number_of_reviews, :price, :address, :phone_number, :website, :status, :cusine
+  attr_accessor :name, :number_of_reviews, :price, :website, :status
 
   @@all = []
 
