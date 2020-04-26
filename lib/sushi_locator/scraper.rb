@@ -9,6 +9,7 @@ class SushiLocator::Scraper
       number_of_reviews = r.css("div.MIajtJFg span.EHA742uW span._1p0FLy4t").text.split('reviews').first.strip
       price = r.css("div.MIajtJFg span.EHA742uW span._1p0FLy4t").text.split(/\w(?=[$])/).last
       website = "https://tripadvisor.com" + r.css("a._15_ydu6b").attribute("href")
+      status = r.css("div.MIajtJFg span.EHA742uW span._1p0FLy4t").text.split(/([w](?=[A-Z]))|([n](?=[A-Z]))|([y](?=[A-Z]))/).first.split('reviews').last
       SushiLocator::Restaurant.new(name, number_of_reviews, price, website)
     end
     #name
@@ -20,6 +21,8 @@ class SushiLocator::Scraper
     # if price exsists
     #website
     #r.css("a._15_ydu6b").attribute("href")
+    #status
+    #r.css("div.MIajtJFg span.EHA742uW span._1p0FLy4t").text.split(/([w](?=[A-Z]))|([n](?=[A-Z]))|([y](?=[A-Z]))/).first.split('reviews').last
   end
 
   def self.scrape_info
