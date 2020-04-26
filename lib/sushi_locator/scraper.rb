@@ -10,7 +10,16 @@ class SushiLocator::Scraper
       price = r.css("div.MIajtJFg span.EHA742uW span._1p0FLy4t").text.split(/\w(?=[$])/).last
       website = "https://tripadvisor.com" + r.css("a._15_ydu6b").attribute("href")
       status = r.css("div.MIajtJFg span.EHA742uW span._1p0FLy4t").text.split(/([w](?=[A-Z]))|([n](?=[A-Z]))|([y](?=[A-Z]))/).first.split('reviews').last
-      SushiLocator::Restaurant.new(name, number_of_reviews, price, website)
+      if status.include?("No")
+        status = status + "w"
+      elsif status.include?("mi")
+        status = status + "n"
+      elsif status.include?("toda")
+        status = status + "y"
+      else
+        status = nil
+      end
+      SushiLocator::Restaurant.new(name, number_of_reviews, price, website, status)
     end
     #name
     #r.css("a._15_ydu6b").text

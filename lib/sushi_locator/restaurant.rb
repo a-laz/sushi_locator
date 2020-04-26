@@ -8,17 +8,7 @@ class SushiLocator::Restaurant
     @number_of_reviews = number_of_reviews
     @price = price
     @website = website
-    if status.include?('No')
-      @status = status + "w"
-    elsif status.include?('mi')
-      @status = status + "n"
-    elsif status.include?('toda')
-      @status = status + "y"
-    else
-      @status = nil
-    end
-
-
+    @status = status
     #attributes.each{|k,v| self.send(("#{k}="), v)}
     save
   end

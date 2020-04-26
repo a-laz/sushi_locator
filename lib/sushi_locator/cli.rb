@@ -20,7 +20,6 @@ class SushiLocator::CLI
   def list_restaurants
     @restaurants.each.with_index(1) do |r,i|
       puts "#{i}. #{r.name}"
-      #puts r.status
     end
   end
 
@@ -36,6 +35,7 @@ class SushiLocator::CLI
     puts "     #{r.number_of_reviews} reviews"
     puts "     #{r.price}"
     puts "     #{r.website}"
+    puts "     #{r.status}"
   end
 
 end
